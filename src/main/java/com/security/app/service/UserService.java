@@ -16,6 +16,11 @@ public class UserService {
     }
 
     public List<User> allUsers() {
-        return userRepository.findAll();
+        List<User> users = new ArrayList<>();
+
+        userRepository.findAll().forEach(users::add);
+
+        return users;
     }
+
 }
